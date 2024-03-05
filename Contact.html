@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Us | Your Company Name</title>
+    <meta name="description" content="Get in touch with us for inquiries, feedback, or any assistance. Reach out through our contact form or find our contact details here. We're here to help!">
+    <meta name="keywords" content="subscription,free trial, premium content, exclusive, service, perks, sign up">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!--------------- header ---------->
+
+
+
+    <section class="sub-header">
+        <nav>
+            <a href="Home.html"><img src="images/logoo.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-chevron-left" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Subscription IPTV.html">IPTV Subscription</a></li>
+                    <li><a href="Free Trial.html">Free Trial</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li class="cart"><a href="chart.html"><i class="cart fa-solid fa-cart-shopping"> <span> 0 </span></i></a></li>
+                </ul>
+            </div>
+            <i class="fa fa-chevron-right" onclick="showMenu()"></i>
+        </nav>
+    
+        <h1>PRICES</h1>
+    </section>
+    
+
+<!------------------ contact us ------------------------------------>
+
+<section class="contact-us">
+    <div class="row">
+    <div class="contact-col">
+        <div>
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>
+                <h5> +212 6 65 07 85 02 </h5>
+                <p> Available 24/7 </p>
+            </span>
+        </div>
+        <div>
+            <i class="fa-regular fa-envelope"></i>
+            <span>
+                <h5> support@host-iptv.com</h5>
+                <p> Fast replies to any problem </p>
+            </span>
+        </div>
+    </div>
+    <div class="contact-col">
+        <form action="">
+            <input type="text" placeholder="Enter your Name"  required>
+            <input type="email" placeholder="Enter your Email Address"  required>
+            <input type="text" placeholder="Enter Your Subject"  >
+            <textarea rows="8" placeholder="Message" required></textarea>
+            <button type="submit" class="contact_btn"> Send </button>
+        </form>
+    </div>
+</div>
+</section>
+
+
+    <!---------------- footer section -------------->
+
+    <section class="footer">
+        <h4> HOST IPTV </h4>
+        <p>HOST-IPTV is a quality IPTV subscription provider with extensive experience. Our selection offers over 22,500 channels in 4K, Full HD, HD, SD, and HEVC, as well as an impressive list of over 50,100 movies and series in VOD. We also have a high-bandwidth private HOST-IPTV server, ensuring optimal stability for all uses. In 2023, choose the best IPTV subscription with HOST-IPTV.</p>
+        <div class="icons">
+        <i class="fa-brands fa-whatsapp"></i> <p>+212 6 65 07 85 02 </p>
+        <i class="fa-regular fa-envelope"></i> <p> support@host-iptv.com</p>
+    </div>
+    </section>
+    
+    
+    <script src="index.js"></script>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+    
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+    
+    </script>
+
+
+
+
+</body>

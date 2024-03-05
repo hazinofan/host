@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Check Out </title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div id='form-wrapper'>
+    <form method="post" action="https://formsubmit.co/ahmedaminemaarouf@gmail.com">
+  
+      <div id='header' class='text-center mb-3'>
+        <h1>Checkout</h1>
+      </div>
+  
+      <div class='text-center'>
+        <i class="fab fa-cc-visa fa-3x mr-3"></i>
+        <i class="fab fa-cc-mastercard fa-3x mr-3"></i>
+        <i class="fab fa-cc-amex fa-3x mr-3"></i>
+        <i class="paypal fa-brands fa-cc-paypal"></i>
+        <i class="fab fa-cc-discover fa-3x mr-3"></i>
+      </div>
+  
+      <h5>Billing Info</h5>
+  
+        <hr>
+  
+        <div class='form-group mb-1'>
+          <label class='mb-1' for='firstName'>First Name</label>
+          <input class='form-control mb-1' id='firstName' name='firstName' type='text' placeholder='John' required>
+        </div>
+  
+        <div class='form-group mb-1'>
+          <label class='mb-1' for='lastName'>Last Name</label>
+          <input id='lastName' name='lastName' type='text' class='form-control' placeholder='Dough' required>
+        </div>
+  
+        <div class='form-group mb-1'>
+          <label class='mb-1' for='email'>Email</label>
+          <input class='form-control' type='email' id='email' name='email' placeholder='support@hostiptv.com' required>
+        </div>
+  
+        <div class='form-group mb-1'>
+          <label class='mb-1' for='city'>Country</label>
+          <input type='text' id='city' name='country' class='form-control' placeholder='USA' required>
+        </div>
+  
+        <div class='form-row mb-2'>
+          <div class='col-md-8'>
+            <label class='mb-1' for='state'>Phone</label>
+            <input id='state' name='phone' type="tel" class='form-control' placeholder='+1 254 32****' required>
+          </div>
+          <div class='col-md-4'>
+  
+            <label class='mb-1' for='zip'>Zip</label>
+            <input type='text' id='zip' name='zip' class='form-control' placeholder='00666'>
+          </div>
+          <input type="hidden" name="_autoresponse" value="Your Message Have been received">
+          <input type="hidden" name="_template" value="table">
+        </div>
+  
+        <h5>Payment Information</h5>
+          
+          <input type="radio" name="payment_method" value="paypal" required>
+          <label for="payment_method">Invoice to be paid via PayPal / Credit Card.</label>
+          <p>Thank you for choosing ConnectXIPTV. Your order is pending payment. You will shortly receive an invoice in your email to be paid via PayPal or credit card.  </p>
+
+          <h5>Your Order</h5>
+
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Subtotal</th>
+                </tr>
+              </thead>
+              <tbody id="cartTableBody">
+                
+              </tbody>
+            </table>
+           <a class="zayda" href="thankYou.html"><button id="submitPaymentBtn" class="button-27" role="button"><i class="fa-solid fa-lock payment"></i><span>Submit Payment</span></button></a>
+            
+          </div>
+    </form>
+  </div>
+
+  <a class="a-28" id="checkoutLink" href="Home.html"><span>Back To Home Page </span></a>
+  <script src="index.js"></script>
+  <script>
+
+
+function displayCart() {
+    let cartItems = localStorage.getItem('productsInCart');
+    console.log(cartItems)
+    cartItems = JSON.parse(cartItems);
+    let cartTableBody = document.getElementById('cartTableBody');
+
+    if (cartItems && cartTableBody) {
+        cartTableBody.innerHTML = '';
+
+        Object.values(cartItems).forEach(item => {
+            cartTableBody.innerHTML += `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>$${(item.inCart * item.price).toFixed(2)}</td>
+                </tr>`;
+        });
+    }
+}
+displayCart()
+  </script>
+
+  </body>
+</html>

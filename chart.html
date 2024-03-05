@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.0.1/ionicons.min.css">
+    <title> Cart </title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="chart.js" async></script>
+</head>
+<body>
+
+    <!------------ header --------------->
+
+    <section class="sub-header">
+        <nav>
+            <a href="Home.html"><img src="images/logoo.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-chevron-left" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Subscription IPTV.html">IPTV Subscription</a></li>
+                    <li><a href="Free Trial.html">Free Trial</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li class="cart"><a href="chart.html"><i class="cart fa-solid fa-cart-shopping"> <span> 0 </span></i></a></li>
+                </ul>
+            </div>
+            <i class="fa fa-chevron-right" onclick="showMenu()"></i>
+        </nav>
+    
+        <h1>PRICES</h1>
+    </section>
+
+
+<!------------ chart section --------------------->
+
+<div class="products_container">
+    <div class="products_header">
+        <h5 class="products_title">PRODUCT</h5>
+        <h5 class="price_cart">PRICE</h5>
+        <h5 class="quantity">QUANTITY</h5>
+        <h5 class="total">TOTAL</h5>
+    </div>
+    <div class="products">
+        
+    </div>
+    <a class="a-28" id="checkoutLink" href="checkout.html">proceed to checkout</a>
+</div>
+
+<script>
+    document.getElementById("checkoutLink").addEventListener("click", function() {
+    let cartItems = localStorage.getItem('productsInCart');
+    localStorage.setItem('cartItemsForCheckout', cartItems);
+});
+
+</script>
+
+
+<!------------------- footer section ---------------->
+<section class="footer">
+    <h4> HOST IPTV </h4>
+    <p>HOST-IPTV est un fournisseur d'abonnements IPTV de qualité avec une vaste expérience. Notre sélection propose plus de 22 500 chaînes en 4K, Full HD, HD, SD et HEVC, ainsi qu'une liste impressionnante de plus de 50 100 films et séries en VOD. Nous disposons également d'un serveur HOST-IPTV privé à haute bande passante, garantissant une stabilité optimale pour toutes les utilisations. En 2023, optez pour le meilleur abonnement IPTV avec HOST-IPTV.</p>
+    <div class="icons">
+    <i class="fa-brands fa-whatsapp"></i> <p> 06 65 07 85 02 </p>
+    <i class="fa-regular fa-envelope"></i> <p> ahmedaminemaarouf1@gmail.com </p>
+</div>
+</section>
+
+<script src="index.js"></script>
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right="-200px";
+    }
+
+</script>
+</body>

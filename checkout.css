@@ -1,0 +1,188 @@
+
+#form-wrapper {
+    background-color: white;
+    margin: auto;
+    margin-top: 100px;
+    width: 600px;
+    height: auto;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid lightgray;
+  }
+  
+  #header {
+    background-color: #638D99;
+    border-radius: 10px 10px 0px 0px;
+    border: lightgray solid 1px;
+  }
+  
+  h1 {
+    color: #D9F6FF;
+  }
+  
+  h5 {
+    color: #997654;
+  }
+  
+  i {
+    color: #997654;
+  }
+  
+  button i {
+    color: white;
+  }
+  
+  hr {
+    border-color: #E6C9AC;
+  }
+  
+  button {
+    background-color: #638D99 !important;
+  }
+  
+  select {
+    display: inline;
+  }
+
+  form {margin-bottom: 21px;}
+
+button.btn.btn-primary.mt-4 {
+    padding: 13px;
+}
+
+::before {
+    font-size: 42px;
+}
+
+i.paypal.fa-brands.fa-cc-paypal {
+    margin-right: 20px;
+}
+
+body {
+    background-color: lightblue;
+  }
+  
+  .a-28 {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600; 
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+  }
+  
+  .a-28:disabled {
+    pointer-events: none;
+  }
+  
+  .a-28:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgb(72, 10, 72);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .a-28:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  a.a-28 {
+    width: 50%;
+    gap: 31px;
+    font-size: 16px;
+    display: flex;
+    margin-top: 26px;
+    text-decoration: none;
+}
+
+a.a-28 span {
+  margin: 0 auto;
+  font-size: 17px;
+  display: flex;
+}
+
+
+.button-27 {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.button-27:disabled {
+  pointer-events: none;
+}
+
+.button-27:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-27:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.fa-lock:before {
+  content: "\f023";
+  font-size: 26px;
+  margin-right: 16px;
+}
+
+button.button-27 {
+  width: 38%;
+  display: flex;
+  margin: 0 auto;
+}
+  
+  a#checkoutLink {
+    width: 20%;
+    display: flex;
+    margin: 52px auto;
+}
+
+.zayda:hover{
+  text-decoration: none;
+}

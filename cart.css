@@ -1,0 +1,158 @@
+body {
+    background-color: #eee;
+}
+
+.products_container{
+    max-width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 500px;
+}
+
+.products_header{
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgray;
+    margin: 0 auto;
+}
+
+.products_title{
+    width: 45%;
+}
+
+.quantity{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.price_cart{
+    width: 15%;
+    display: flex;
+    border-bottom: 4px solid lightgray;
+    align-items: center;
+}
+
+.total{
+    width: 10%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+
+.product {
+    width: 45%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+img {
+    width: 80px;
+    margin: 0 28px;
+}
+
+.product {
+    gap: 151px;
+    margin-left: 157px;
+    margin-bottom: 65px;
+}
+
+.product_info {
+    display: flex;
+}
+
+span {
+    margin-top: 39px;
+    width: 100%;
+}
+
+i.fa-solid.fa-trash {
+    margin-top: 56px;
+    cursor: pointer;
+}
+
+.quantity {
+    display: flex;
+    gap: 16px;
+}
+
+.basketTotalContainer {
+    justify-content: flex-end;
+    display: flex;
+    gap: 68px;
+    margin-left: 750px;
+}
+
+
+i {
+    padding-right: 8px;
+    color: purple;
+    cursor: pointer;
+}
+
+.bascketTotalTitle {
+    width: 16%;
+}
+
+/* <!-- HTML !--> */
+
+
+/* CSS */
+.a-28 {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.a-28:disabled {
+  pointer-events: none;
+}
+
+.a-28:hover {
+  color: #fff;
+  background-color: rgb(72, 10, 72);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.a-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+a.a-28 {
+    width: 31%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 93px;
+}
+
