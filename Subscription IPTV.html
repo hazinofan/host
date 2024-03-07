@@ -40,74 +40,74 @@
         <div class="row">
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 12 months Gold', 99)">
                                 
                 <h3>12-Month GOLD Subscription</h3>
-                <p>99€</p>
+                <p>80$</p>
                 <a class="hero_btn buy_sec" id="commander_1"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                    <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 12 months Premium', 50)">
                 
                 <h3>12-Month PREMIUM Subscription</h3>
-                <p>60€</p>
+                <p>50$</p>
                 <a class="hero_btn buy_sec" id="commander_2"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                    <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 6 months premium', 42)">
                 
                 <h3>6-Month PREMIUM Subscription</h3>
-                <p>48€</p>
+                <p>42$</p>
                 <a class="hero_btn buy_sec" id="commander_3"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                    <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 3 months premium', 32)">
                 
                 <h3>3-Month PREMIUM Subscription</h3>
-                <p>38€</p>
+                <p>32$</p>
                 <a class="hero_btn buy_sec" id="commander_4"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                    <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 1 month premium', 20)">
                 
                 <h3>1-Month PREMIUM Subscription</h3>
-                <p>24€</p>
+                <p>20$</p>
                 <a class="hero_btn buy_sec" id="commander_5"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                    <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 12 months Standard', 48)">
                 
                 <h3>12-Month STANDARD Subscription</h3>
-                <p>57€</p>
+                <p>48$</p>
                 <a class="hero_btn buy_sec" id="commander_6"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                    <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 6 months Standard', 38)">
                 
                 <h3>6-Month STANDARD Subscription</h3>
-                <p>46€</p>
+                <p>38$</p>
                 <a class="hero_btn buy_sec" id="commander_7"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                    <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 3 months Standard', 28)">
                 
                 <h3>3-Month STANDARD Subscription</h3>
-                <p>35€</p>
+                <p>28$</p>
                 <a class="hero_btn buy_sec" id="commander_8"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
             <div class="facilities-col">
                 
-                    <img src="images/product.png" alt="image">
+                    <img src="images/product.png" alt="image" onclick="redirectToProduct('Subscription 1 month Standard', 16)">
                 
                 <h3>1-Month STANDARD Subscription</h3>
-                <p>20€</p>
+                <p>16$</p>
                 <a class="hero_btn buy_sec" id="commander_9"><i class="fa-solid fa-cart-shopping"></i> Order </a>
             </div>
         </div>
@@ -151,5 +151,11 @@
         navLinks.style.right="-200px";
     }
 
+</script>
+<script>
+    // Function to redirect to single product page with parameters
+    function redirectToProduct(productName, productPrice) {
+        window.location.href = `product-page.html?product=${encodeURIComponent(productName)}&price=${encodeURIComponent(productPrice)}`;
+    }
 </script>
 </body>

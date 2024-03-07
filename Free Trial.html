@@ -7,6 +7,7 @@
     <meta name="description" content="Unlock endless possibilities with our innovative product. Start your journey with a risk-free trial today. Experience the future, free trial awaits!">
     <meta name="keywords" content="subscription,free trial, premium content, exclusive, service, perks, sign up">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -42,40 +43,40 @@
 <section class="test">
     <div class="test_container">
         <div class="title"> Form to fill out to benefit from the free 2-hour IPTV trial:</div>
-        <form method="post" action="https://formsubmit.co/ahmedaminemaarouf@gmail.com">
+        <form method="post" onsubmit="sendEmail(); reset(); return false;">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details"> <strong> Full Name: *</strong></span>
-                    <input type="text" name="name" placeholder="Enter Your Full Name" required>
+                    <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details"> <strong> Email: *</strong> </span>
-                    <input type="email" name="email" placeholder="Enter Your Email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details"> <strong> Phone: *</strong> </span>
-                    <input type="tel" name="tel" placeholder="Enter Your Phone Number" required>
+                    <input type="tel" id="tel" name="tel" placeholder="Enter Your Phone Number" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details"> <strong> Your Country: *</strong> </span>
-                    <input type="text" name="pays" placeholder="Enter Your Country" required>
+                    <input type="text" id="country" name="pays" placeholder="Enter Your Country" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details"><strong> MAC Address of your device [MAG]: </strong></span>
-                    <input type="text" name="adresse Mac" placeholder="70:b1:3d:33:c7:2a">
+                    <input type="text" id="Mac" name="adresse Mac" placeholder="70:b1:3d:33:c7:2a">
                 </div>
 
                 <div class="input-box">
-                    <span class="details"><strong> Your Message: </strong></span>
-                    <input type="text" name="message" placeholder="Enter Your Message" required>
+                    <span class="details"><strong> Your Message: *</strong></span>
+                    <input type="text" id="msg" name="message" placeholder="Enter Your Message" required>
                 </div>
             </div>
             
-            <div class="type-details">
+            <div class="type-details" >
                 <input type="radio" name="type" id="dot-1">
                 <input type="radio" name="type" id="dot-2">
                 <input type="radio" name="type" id="dot-3">
@@ -156,9 +157,8 @@
             <p> Feel free to contact us for any inquiries. <br>
 
                 Our teams are available 7 days a week and 2 hours a day. <br> <br> <br>
-               <span class="info_container" > <i class="fa-solid fa-phone"></i>  06 65 07 85 02</span> <br> <br>
-                <span class="info_container"> <i class="fa-regular fa-envelope"></i> ahmedaminemaarouf1@gmail.com </span> <br> <br>
-               <span class="info_container"> <i class="fa-solid fa-hourglass-start"></i>  ahmedaminemaarouf1@gmail.com </span>
+               <span class="info_container" > <i class="fa-solid fa-phone"></i>+212665-078502</span> <br> <br>
+                <span class="info_container"> <i class="fa-regular fa-envelope"></i> support@host-iptv.com </span> <br> <br>
             </p>
         </div>
     </div>
@@ -196,5 +196,77 @@
         }
     
     </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        const form = document.querySelector('form')
+
+        const name = document.getElementById('name')
+        const email = document.getElementById('email')
+        const Phone = document.getElementById('tel')
+        const Country = document.getElementById('country')
+        const Mac = document.getElementById('Mac')
+        const Message = document.getElementById('msg')
+
+        function sendEmail() {
+            const bodyMessage = `
+            <h2>Trial Details:</h2>
+            <table style="border-collapse: collapse; width: 100%; border: 2px solid purple;">
+                <tr style="background-color: #f2f2f2;">
+                    <th style="border: 2px solid purple; padding: 8px;">Field</th>
+                    <th style="border: 2px solid purple; padding: 8px;">Value</th>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid purple; padding: 8px;">Name :</td>
+                    <td style="border: 2px solid purple; padding: 8px;">${name.value}</td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid purple; padding: 8px;">Email:</td>
+                    <td style="border: 2px solid purple; padding: 8px;">${email.value}</td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid purple; padding: 8px;">Phone:</td>
+                    <td style="border: 2px solid purple; padding: 8px;">${Phone.value}</td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid purple; padding: 8px;">Country:</td>
+                    <td style="border: 2px solid purple; padding: 8px;">${country.value}</td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid purple; padding: 8px;">Mac:</td>
+                    <td style="border: 2px solid purple; padding: 8px;">${Mac.value}</td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid purple; padding: 8px;">Message:</td>
+                    <td style="border: 2px solid purple; padding: 8px;">${Message.value}</td>
+                </tr>
+            </table>`
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "ahmedaminemaarouf@gmail.com",
+            Password : "78505A497F73D0D85D495ECC0259B3981ECE", //,78505A497F73D0D85D495ECC0259B3981ECE
+            To : 'ahmedaminemaarouf@gmail.com',
+            From : "ahmedaminemaarouf@gmail.com",
+            Subject : "New Test Request",
+            Body : bodyMessage
+        }).then(
+        message => {
+          if (message == "OK") {
+            Swal.fire({
+            title: "Success!",
+            text: "You Will Receive your Test in few minutes",
+            icon: "success"
+          });
+          }
+        }
+      );
+      }
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        sendEmail()
+      })
+    </script>
+    
     </body>
 </html>

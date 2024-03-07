@@ -156,3 +156,52 @@ a.a-28 {
     margin-top: 93px;
 }
 
+@media (max-width: 900px) {
+    h5.products_title {
+        width: 29%;
+    }
+    
+    h5.quantity {
+        margin-left: 57px;
+    }
+    
+    img {
+        display: none;
+    }
+    
+    i.fa-solid.fa-trash.remove-item {
+        display: flex;
+    }
+    
+    span {
+        margin-top: 10px;
+    }
+
+    .product {
+        gap: 50px;
+        margin-left: 85px;
+        /* margin-bottom: 83px; */
+    }
+
+    i.fa-solid.fa-trash{
+        margin-top: 8px;
+    }
+
+    .product_info{
+        flex-direction: column;
+    }
+
+    i.fa-solid.fa-trash.remove-item {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    a.a-28{
+        width: 58%;
+    }
+}
+
+span.check {
+    margin: 0;
+}
+

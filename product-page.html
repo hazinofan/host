@@ -24,65 +24,73 @@
 
     <!------------ header --------------->
 
-<section class="chart-header">
-    <nav>
-        <a href="Accueil.html"><img src="images/logoo.png" alt=""></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-chevron-left" onclick="hideMenu()"></i>
-            <ul>
-                <li><a href="Accueil.html">Accueil</a></li>
-            <li><a href="Abonnement IPTV.html">Abonnement iptv</a></li>
-            <li><a href="Test Gratuit.html">Test gratuit</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <i class="cart fa-solid fa-cart-shopping"></i>
-            </ul>
-        </div>
-        <i class="fa fa-chevron-right" onclick="showMenu()"></i>
-    </nav>
-
-    <h1> <i class="fa-solid fa-cart-shopping"></i> Page Produit  </h1>
-
-</section>
+    <section class="sub-header">
+        <nav>
+            <a href="Home.html"><img src="images/logoo.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-chevron-left" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Subscription IPTV.html">IPTV Subscription</a></li>
+                    <li><a href="Free Trial.html">Free Trial</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li class="cart"><a href="chart.html"><i class="cart fa-solid fa-cart-shopping"> <span> 0 </span></i></a></li>
+                </ul>
+            </div>
+            <i class="fa fa-chevron-right" onclick="showMenu()"></i>
+        </nav>
+    
+        <h1>PRICES</h1>
+    </section>
 
 <!------------------------ formulaire --------------------------->
-<section class="product-page">   
-<div class="flex-box">
+<section class="product-page">
+    <div class="flex-box">
         <div class="left">
             <div class="big-image">
-                <img src="images/product.png" >
+                <img src="images/product.png" alt="Product Image">
             </div>
         </div>
 
         <div class="right">
-            <div class="url"> <a href="Accueil.html"> Acceuil </a> > <a href="Abonnement IPTV.html">Abonnement IPTV</a>  >  </div>
+            <div class="url"> <a href="Accueil.html"> Home </a> > <a href="Abonnement IPTV.html">IPTV Subscription</a>  >  </div>
             <div class="pname" id="product-name"> </div>
             <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
             </div> 
-        <div class="price_container" id="product-price"> </div>
-        <div class="details-list">
-            <p> Compatibité avec : </p>
-            <ul>
-                <li> Tout type d’appareil Android et iOS. </li>
-                <li> Apple TV</li>
-                <li> MAG (250, 254, 255, 260…).  </li>
-                <li> Smart TV (Samsung, LG, Sony…).  </li>
-                <li> Firestick  </li>
-                <li> Toutes les applications d’IPTV. (set iptv, smart iptv, iptv smarters pro, net iptv et autres applications).  </li>
-                <li> Disponible avec une qualité 4K, FHD et HD.  </li>
-                <li> Option ADULTE à la demande .  </li>
+            <div class="price_container" id="product-price"> </div>
+            <script>
+                window.onload = function() {
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var productName = urlParams.get('product');
+                    var productPrice = urlParams.get('price');
+                    document.getElementById('product-name').innerText = productName;
+                    document.getElementById('product-price').innerText = productPrice + '$';
+                };
+            </script>
+            <div class="details-list">
+                <p> Compatibility with: </p>
+                <ul>
+                    <li> All types of Android and iOS devices. </li>
+                    <li> Apple TV</li>
+                    <li> MAG (250, 254, 255, 260…).  </li>
+                    <li> Smart TVs (Samsung, LG, Sony…).  </li>
+                    <li> Firestick  </li>
+                    <li> All IPTV applications. (set iptv, smart iptv, iptv smarters pro, net iptv, and other applications).  </li>
+                    <li> Available in 4K, FHD, and HD quality.  </li>
+                    <li> ADULT option available on demand.  </li>
             </ul>
         </div>
         <div class="product-quantity">
-            <p> Quantité :</p>
+            <p> Quantity:</p>
             <input type="number" id="product-quantity" min="1" max="6" value="1">
         </div>
         <div class="product_btn">
-            <button class="btn btn-success" id="add-to-cart" data-name="Abonnement 12 mois premium" data-price="40" data-quantity="1" onclick="addToCart(this)">Ajouter au panier</button>
+            <button class="btnn" id="add-to-cart" data-name="Premium 12-month Subscription" data-price="40" onclick="addToCart()">Add to Cart</button>
         </div>
     </div>
 
@@ -91,51 +99,36 @@
 
 <section class="description_section">
     <div class="description" id="product-description">
-        <h1> <i class="fa-brands fa-product-hunt"></i>  Description du produit :</h1>
-        <p> HOST-IPTV vous offre l'accès à la technologie la plus avancée au monde dans le domaine de l'IPTV. Grâce à notre expertise acquise 
-            au fil des années, nos abonnements IPTV sont d'une qualité exceptionnelle. Notre offre <strong> premium d'abonnement IPTV de 12 mois </strong> comprend
-             une gamme diversifiée de chaînes, y compris des chaînes pour adultes, avec plus de 22 500 chaînes disponibles, ainsi qu'une 
-             bibliothèque de plus de 50 000 films et séries. Notre serveur HOST-IPTV est non seulement performant et stable, mais il est 
-             également constamment mis à jour pour vous offrir une expérience de visionnage fluide et sans interruption. De plus, 
-             l'activation de votre abonnement se fait entièrement à distance, sans aucune intervention de votre part. Toutes les instructions 
-             nécessaires vous seront fournies dans les e-mails que vous recevrez après avoir passé votre commande pour <strong> votre abonnement IPTV 
-             premium de 12 mois.</strong> Profitez d'une expérience IPTV exceptionnelle avec HOST-IPTV.
+        <h1> <i class="fa-brands fa-product-hunt"></i>  Product Description:</h1>
+        <p> HOST-IPTV offers you access to the most advanced technology in the world of IPTV. With our years of expertise, our IPTV subscriptions are of exceptional quality. Our <strong> premium 12-month IPTV subscription </strong> includes a diverse range of channels, including adult channels, with over 22,500 channels available, as well as a library of over 50,000 movies and series. Our HOST-IPTV server is not only powerful and stable but also constantly updated to provide you with a smooth and uninterrupted viewing experience. Additionally, activation of your subscription is done entirely remotely, without any intervention on your part. All necessary instructions will be provided to you in the emails you receive after placing your order for <strong> your premium 12-month IPTV subscription.</strong> Enjoy an exceptional IPTV experience with HOST-IPTV.
         </p> <br> <br>
 
-         <p> HOST-IPTV offre l'un des abonnements IPTV Premium les plus réputés sur le marché. En tant que fournisseur d'abonnements
-                IPTV de confiance, nous garantissons une expérience de visionnage fluide et ininterrompue. L'activation de nos abonnements
-                IPTV pour adultes se fait entièrement à distance, sans nécessiter votre intervention. Dès que vous passez votre commande,
-                nous vous enverrons les instructions nécessaires par e-mail. Profitez d'une qualité de service exceptionnelle avec
-                <strong> HOST-IPTV. </strong>
+         <p> HOST-IPTV offers one of the most reputable Premium IPTV subscriptions on the market. As a trusted IPTV subscription provider, we guarantee a smooth and uninterrupted viewing experience. Activation of our adult IPTV subscriptions is done entirely remotely, without requiring your intervention. As soon as you place your order, we will send you the necessary instructions via email. Enjoy exceptional service quality with <strong> HOST-IPTV. </strong>
         </p> <br> <br>
 
         <h4> N.B </h4> <br>
-        <p> Profitez de notre offre d'essai gratuit de 24 heures et découvrez la qualité exceptionnelle de HOST-IPTV.
-             Nous sommes fiers de vous offrir le meilleur produit du marché, garantissant une expérience inégalée.
-              Obtenez votre abonnement en quelques minutes grâce à notre service ultra-rapide. Notre équipe d'assistance est disponible
-               24h/24 et 7j/7 pour vous accompagner à chaque étape, de l'inscription à l'installation de votre abonnement IPTV sur votre appareil.
+        <p> Take advantage of our 24-hour free trial offer and experience the outstanding quality of HOST-IPTV. We take pride in offering you the best product on the market, guaranteeing an unmatched experience. Get your subscription in minutes with our ultra-fast service. Our support team is available 24/7 to assist you at every step, from signing up to installing your IPTV subscription on your device.
         </p>
 
-        <a href="Abonnement IPTV.html"> Retourner a la page des produits </a>
-        
-
+        <a class="bt555" href="Subscription IPTV.html"> Return to Products Page </a>
     </div>
-    
 </section>
+
 
 
 
 <!------------------- footer section ---------------->
 <section class="footer">
     <h4> HOST IPTV </h4>
-    <p>HOST-IPTV est un fournisseur d'abonnements IPTV de qualité avec une vaste expérience. Notre sélection propose plus de 22 500 chaînes en 4K, Full HD, HD, SD et HEVC, ainsi qu'une liste impressionnante de plus de 50 100 films et séries en VOD. Nous disposons également d'un serveur HOST-IPTV privé à haute bande passante, garantissant une stabilité optimale pour toutes les utilisations. En 2023, optez pour le meilleur abonnement IPTV avec HOST-IPTV.</p>
+    <p>HOST-IPTV is a quality IPTV subscription provider with extensive experience. Our selection offers over 22,500 channels in 4K, Full HD, HD, SD, and HEVC, as well as an impressive list of over 50,100 movies and series in VOD. We also have a high-bandwidth private HOST-IPTV server, ensuring optimal stability for all uses. In 2023, choose the best IPTV subscription with HOST-IPTV.</p>
     <div class="icons">
-    <i class="fa-brands fa-whatsapp"></i> <p> 06 65 07 85 02 </p>
-    <i class="fa-regular fa-envelope"></i> <p> ahmedaminemaarouf1@gmail.com </p>
+    <i class="fa-brands fa-whatsapp"></i> <p>+212 6 65 07 85 02 </p>
+    <i class="fa-regular fa-envelope"></i> <p> support@host-iptv.com </p>
 </div>
-
+</section>
 
 </section>
+
 <script>
     var navLinks = document.getElementById("navLinks");
 
@@ -147,6 +140,5 @@
     }
 
 </script>
-
-<script src="chart.js"></script>
+<script src="index.js"></script>
 </body>

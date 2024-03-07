@@ -10,7 +10,7 @@
 </head>
 <body>
   <div id='form-wrapper'>
-    <form method="post" action="https://formsubmit.co/ahmedaminemaarouf@gmail.com">
+    <form method="post" onsubmit="sendEmail(); reset(); return false;">
   
       <div id='header' class='text-center mb-3'>
         <h1>Checkout</h1>
@@ -66,7 +66,7 @@
           
           <input type="radio" name="payment_method" value="paypal" required>
           <label for="payment_method">Invoice to be paid via PayPal / Credit Card.</label>
-          <p>Thank you for choosing ConnectXIPTV. Your order is pending payment. You will shortly receive an invoice in your email to be paid via PayPal or credit card.  </p>
+          <p>Thank you for choosing Host-IPTV. Your order is pending payment. You will shortly receive an invoice in your email to be paid via PayPal or credit card.  </p>
 
           <h5>Your Order</h5>
 
@@ -112,6 +112,109 @@ function displayCart() {
 }
 displayCart()
   </script>
+
+  <script src="https://smtpjs.com/v3/smtp.js"> </script>
+  <script>
+
+    const form = document.querySelector('form');
+    const firstName = document.getElementById('firstName'); // Corrected
+    const lastName = document.getElementById('lastName'); // Corrected
+    const email = document.getElementById('email'); // Corrected
+    const country = document.getElementById('city'); // Corrected
+    const phone = document.getElementById('state'); // Corrected
+    const zip = document.getElementById('zip'); // Corrected
+
+
+
+
+    function sendEmail() {
+    const cartItems = localStorage.getItem('productsInCart');
+    const bodyMessage = `
+    <h2>Order Details:</h2>
+    <table style="border-collapse: collapse; width: 100%; border: 2px solid purple;">
+        <tr style="background-color: #f2f2f2;">
+            <th style="border: 2px solid purple; padding: 8px;">Field</th>
+            <th style="border: 2px solid purple; padding: 8px;">Value</th>
+        </tr>
+        <tr>
+            <td style="border: 2px solid purple; padding: 8px;">First Name:</td>
+            <td style="border: 2px solid purple; padding: 8px;">${firstName.value}</td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid purple; padding: 8px;">Last Name:</td>
+            <td style="border: 2px solid purple; padding: 8px;">${lastName.value}</td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid purple; padding: 8px;">Email:</td>
+            <td style="border: 2px solid purple; padding: 8px;">${email.value}</td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid purple; padding: 8px;">Country:</td>
+            <td style="border: 2px solid purple; padding: 8px;">${country.value}</td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid purple; padding: 8px;">Phone:</td>
+            <td style="border: 2px solid purple; padding: 8px;">${phone.value}</td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid purple; padding: 8px;">Zip:</td>
+            <td style="border: 2px solid purple; padding: 8px;">${zip.value}</td>
+        </tr>
+    </table>
+    <h2>Products:</h2>
+    <table style="border-collapse: collapse; width: 100%; border: 2px solid purple;">
+        <tr style="background-color: #f2f2f2;">
+            <th style="border: 2px solid purple; padding: 8px;">Product</th>
+            <th style="border: 2px solid purple; padding: 8px;">Subtotal</th>
+        </tr>
+        ${getCartItemsHtml(cartItems)}
+    </table>`;
+
+
+
+      Email.send({
+      Host : "smtp.elasticemail.com",
+      Username : "ahmedaminemaarouf@gmail.com",
+      Password : "78505A497F73D0D85D495ECC0259B3981ECE", //,78505A497F73D0D85D495ECC0259B3981ECE
+      To : 'ahmedaminemaarouf@gmail.com',
+      From : "ahmedaminemaarouf@gmail.com",
+      Subject : "New Order",
+      Body : bodyMessage
+      }).then(
+        message => {
+          if (message == "OK") {
+            Swal.fire({
+            title: "Success!",
+            text: "You Will receive the invoice in your email in a few minutes",
+            icon: "success"
+          });
+          }
+        }
+      );
+      }
+
+      function getCartItemsHtml(cartItems) {
+    let html = '';
+    if (cartItems) {
+        cartItems = JSON.parse(cartItems);
+        Object.values(cartItems).forEach(item => {
+            html += `
+            <tr>
+                <td style="border: 2px solid purple; padding: 8px;">${item.name}</td>
+                <td style="border: 2px solid purple; padding: 8px;">$${(item.inCart * item.price).toFixed(2)}</td>
+            </tr>`;
+        });
+    }
+    return html;
+  }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        sendEmail()
+      })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   </body>
 </html>

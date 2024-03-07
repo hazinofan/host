@@ -11,7 +11,7 @@
   }
   
   #header {
-    background-color: #638D99;
+    background-color: #701e7e;
     border-radius: 10px 10px 0px 0px;
     border: lightgray solid 1px;
   }
@@ -185,4 +185,18 @@ button.button-27 {
 
 .zayda:hover{
   text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  #form-wrapper{
+    width: 372px;
+  }
+
+  button.button-27{
+    width: 64%;
+  }
+
+  a#checkoutLink{
+    width: 61%;
+  }
 }

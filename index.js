@@ -255,6 +255,23 @@ function removeItem(tag) {
     displayCart();
 }
 
+function addToCart() {
+    let productName = document.getElementById('product-name').innerText;
+    let productPrice = document.getElementById('add-to-cart').getAttribute('data-price');
+    let productQuantity = document.getElementById('product-quantity').value;
+
+    let product = {
+        name: productName,
+        price: parseFloat(productPrice), // Retrieve price dynamically from data-price attribute
+        quantity: parseInt(productQuantity)
+    };
+
+    cartNumbers(product);
+    totalCost(product);
+}
+
+
+
 
 
 onLoadCartNumbers()

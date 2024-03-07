@@ -438,6 +438,7 @@ i.fa-solid{
     width: 45%;
     border-radius: 10px;
     margin: auto;
+    cursor: pointer;
 }
 
 .facilities-col h3 {
@@ -1012,6 +1013,8 @@ i.fa-solid{
     color: #555;
     font-weight: 400;
 } 
+
+
 
 .contact-col input, .contact-col textarea{
     width: 100%;
@@ -1708,6 +1711,7 @@ a.hero_btn.chart__btn:hover{
     color: white;
     background-color: #845ec2;
     transition: 0.3s;
+    text-decoration: none;
   }
 
   @media (max-width: 900px) {
@@ -1736,7 +1740,50 @@ a.hero_btn.chart__btn:hover{
 
  .contact-col div .fa-regular.fa-envelope {
     font-size: 28px;
-    color: rgb(163, 126, 197);
+    color: #a37ec5;
     margin: 10px;
     margin-right: 30px;
 }
+
+ button.btnn {
+        font-family: system-ui, sans-serif;
+        font-size: 3.5rem;
+        cursor: pointer;
+        width: 142px;
+        font-size: 15px;
+        padding: .1em .6em;
+        font-weight: bold;  
+        border: none;
+    }
+    button.btnn {
+        --c:  #a37ec5; /* the color*/
+        
+        box-shadow: 0 0 0 .1em inset var(--c); 
+        --_g: linear-gradient(var(--c) 0 0) no-repeat;
+        background: 
+          var(--_g) calc(var(--_p,0%) - 100%) 0%,
+          var(--_g) calc(200% - var(--_p,0%)) 0%,
+          var(--_g) calc(var(--_p,0%) - 100%) 100%,
+          var(--_g) calc(200% - var(--_p,0%)) 100%;
+        background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+        outline-offset: .1em;
+        transition: background-size .4s, background-position 0s .4s;
+      }
+
+      button.btnn:hover {
+        --_p: 100%;
+        transition: background-position .4s, background-size 0s;
+      }
+      button.btnn:active {
+        box-shadow: 0 0 9e9q inset #a37ec5; 
+        background-color: var(--c);
+        color: #fff;
+      }
+      
+
+      .bt555{
+        color: #845ec2;
+        text-align: center;
+        display: flex;
+        margin: 0 auto;
+      }
