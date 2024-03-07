@@ -186,7 +186,9 @@ displayCart()
             Swal.fire({
             title: "Success!",
             text: "You Will receive the invoice in your email in a few minutes",
-            icon: "success"
+            icon: "success",
+            timer: 5000, // Display alert for 3 seconds
+            timerProgressBar: true,
           });
           }
         }

@@ -496,6 +496,15 @@ i.fa-solid{
     .compa img{
         width: 100%;
     }
+
+
+    .gold_img {
+        width: 100%;
+        border-radius: 21px;
+        margin: 0;
+        display: none;
+        height: auto;
+    }
 }
 
 /* -------------------- stats part section ------------------*/
